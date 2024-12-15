@@ -2,9 +2,16 @@
 
 // Toggle Navigation Menu on Mobile
 document.querySelector('.menu-icon').addEventListener('click', () => {
-    const navMenu = document.querySelector('.nav ul');
-    navMenu.classList.toggle('show'); // Show or hide the menu
+    function toggleMenu() {
+        const navMenu = document.querySelector('.nav ul');
+        navMenu.classList.toggle('show');
+    }
 });
+
+function toggleMenu() {
+    const navMenu = document.querySelector('.nav ul');
+    navMenu.classList.toggle('show');
+}
 
 // Smooth Scroll to Sections
 document.querySelectorAll('.nav a').forEach(anchor => {
@@ -50,3 +57,6 @@ document.querySelectorAll('.btn[href^="mailto"]').forEach(button => {
         alert('Opening email client...');
     });
 });
+
+
+
