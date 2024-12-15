@@ -59,25 +59,31 @@ body {
 }
 
 
-/* Responsive Navigation */
+.header .menu-icon {
+    display: none; /* Hidden by default */
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
 @media (max-width: 768px) {
     .header .menu-icon {
-        display: block;
+        display: block; /* Show menu icon on smaller screens */
     }
 
     .nav ul {
-        display: none;
+        display: none; /* Hide the navigation menu by default */
         flex-direction: column;
         background: #2c3e50;
         position: absolute;
         top: 50px;
         right: 0;
-        width: 200px;
-        text-align: left;
+        width: 100%; /* Full width on small screens */
+        text-align: center;
     }
 
     .nav ul.show {
-        display: flex;
+        display: flex; /* Show the menu when toggled */
     }
 }
 
@@ -86,15 +92,16 @@ body {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 120px 50px;
     background: linear-gradient(135deg, #4b75a0, #68b7c4);
     color: #fff;
     min-height: 100vh;
-    text-align: left;
+    text-align: left; /* Align text to the left */
 }
 
 .home-section .content {
+    flex: 1; /* Text container takes up available space */
     max-width: 600px;
     margin: 20px;
 }
@@ -119,13 +126,56 @@ body {
     animation: fadeIn 2s;
 }
 
+.home-section .image-container {
+    flex: 0 0 250px; /* Fix the width for the image container */
+    text-align: center;
+    margin: 20px;
+}
+
 .home-section .image-container img {
     width: 250px;
     height: 250px;
-    border-radius: 50%; /* Round image */
+    border-radius: 50%;
     object-fit: cover;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+/* Responsive for Screens Below 768px */
+@media (max-width: 768px) {
+    .home-section {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the left */
+        padding: 20px;
+        text-align: left; /* Keep text aligned to the left */
+    }
+
+    .home-section .image-container {
+        display: none; /* Hide the image on smaller screens */
+    }
+
+    .home-section .content {
+        width: 100%; /* Make text content span full width */
+        max-width: none; /* Remove width restriction */
+        margin: 0; /* No extra margins on small screens */
+    }
+
+    .home-section h1 {
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+
+    .home-section h2 {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+
+    .home-section p {
+        font-size: 1em;
+        line-height: 1.6;
+    }
+}
+
+
 
 .aligned-paragraph {
     text-align: justify; /* Ensures text is evenly aligned on both sides */
