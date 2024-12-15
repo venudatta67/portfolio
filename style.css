@@ -263,6 +263,36 @@ body {
     right: 100px; /* Adjust distance from right */
 }
 
+/* Responsive for Screens Below 768px */
+@media (max-width: 768px) {
+    .about-section {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the left */
+        padding: 20px;
+        text-align: left; /* Keep text aligned to the left */
+    }
+
+    .image-container img{
+        display: none; /* Hide the image on smaller screens */
+    }
+
+    .about-section .content {
+        width: 100%; /* Make text content span full width */
+        max-width: none; /* Remove width restriction */
+        margin: 0; /* No extra margins on small screens */
+    }
+
+    .about-section h2 {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+
+    .about-section p {
+        font-size: 1em;
+        line-height: 1.6;
+    }
+}
+
 
 /* Projects Page */
 .project-grid {
